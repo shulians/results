@@ -35,6 +35,7 @@ public class ResultServiceImpl implements IResultService {
                               .key(resultsDTO.getKey())
                               .localizedName(resultsDTO.getLocalizedName())
                               .country(resultsDTO.getCountry())
+                              .city(resultsDTO.getCity())
                               .DateTime(resultsDTO.getDateTime())
                               .weatherInMetric(resultsDTO.getWeatherInMetric())
                               .weatherInImperial(resultsDTO.getWeatherInImperial()).build();

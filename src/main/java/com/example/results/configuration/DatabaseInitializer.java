@@ -19,7 +19,7 @@ public class DatabaseInitializer {
 
                 jdbcTemplate.execute("create table result (id int primary key "
                         + "auto_increment, key_location varchar(30), localizedName varchar(30),"
-                        + "country varchar(30), dateTime varchar(40),"
+                        + "country varchar(30),city varchar(30), dateTime varchar(40),"
                         + "weatherInMetric varchar(30), weatherInImperial varchar(30))");
             }
         };

@@ -15,10 +15,10 @@ public class JdbcResultsRepository implements ResultsRepository{
 
     @Override
     public int save(Result result) {
-        return jdbcTemplate.update("insert into result (key_location, localizedName, country, dateTime," +
+        return jdbcTemplate.update("insert into result (key_location, localizedName, country, city, dateTime," +
                                                             " weatherInMetric, weatherInImperial)" +
-                                                            " values(?,?,?,?,?,?) ",
-                result.getKey(), result.getLocalizedName(), result.getCountry(),
+                                                            " values(?,?,?,?,?,?,?) ",
+                result.getKey(), result.getLocalizedName(), result.getCountry(),result.getCity(),
                 result.getDateTime(),result.getWeatherInMetric(),result.getWeatherInImperial());
     }
 
@@ -30,6 +30,7 @@ public class JdbcResultsRepository implements ResultsRepository{
                         .key(rs.getString("key_location"))
                         .localizedName(rs.getString("localizedName"))
                         .country(rs.getString("country"))
+                        .city(rs.getString("city"))
                         .DateTime(rs.getString("dateTime"))
                         .weatherInMetric(rs.getString("weatherInMetric"))
                         .weatherInImperial(rs.getString("weatherInImperial")).build()

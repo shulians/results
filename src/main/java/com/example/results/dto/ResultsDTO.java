@@ -15,6 +15,7 @@ public class ResultsDTO {
     String key;
     String localizedName;
     String country;
+    String city;
     String DateTime;
     String weatherInMetric;
     String weatherInImperial;
